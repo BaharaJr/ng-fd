@@ -5,7 +5,7 @@ export function reducer(state, action){
     console.log('Payload::', action.payload)
     return {
       ...state,
-      showProductCode: action.payload
+      maskUserName: action.payload
     }
     default:
     return state
