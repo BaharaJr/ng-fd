@@ -1,4 +1,4 @@
-export function reducer(action, state){
+export function reducer(state, action){
 switch(action.type){
   case 'TOGGLE_PRODUCT_CODE':
   console.log('Existing State::', JSON.stringify(state))
@@ -7,7 +7,7 @@ switch(action.type){
     ...state,
     showProductCode: action.payload
   }
-  default: 
+  default:
   return state
 }
 }
