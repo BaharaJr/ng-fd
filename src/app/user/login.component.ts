@@ -3,7 +3,7 @@ import { NgForm } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 
 import { AuthService } from "./auth.service";
-import { Store } from "@ngrx/store";
+import { Store, select } from "@ngrx/store";
 
 @Component({
   templateUrl: "./login.component.html",
@@ -21,7 +21,13 @@ export class LoginComponent implements OnInit {
     private store: Store<any>
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.pipe(select("user")).subscribe((user) => {
+      if (user) {
+        this.maskUserName = user.maskUserName;
+      }
+    });
+  }
 
   cancel(): void {
     this.router.navigate(["welcome"]);
