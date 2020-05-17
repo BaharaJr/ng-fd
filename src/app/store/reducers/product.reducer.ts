@@ -35,7 +35,7 @@ export function reducer(
           productName: "",
           description: "",
           starRating: 0,
-        },
+         },
       };
     default:
       return state;
