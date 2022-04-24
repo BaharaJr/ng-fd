@@ -1,0 +1,15 @@
+name: TEST
+
+on:
+    push:
+      banches: [master]
+jobs:
+    test:
+      runs-on: ubuntu-latest
+      steps:
+         - name: TEST
+         - uses: bmsteven/create_pr@1.0.5
+           with:
+              GITHUB_TOKEN: ${{secrets.TOKEN}}
+              SLACK_WEBHOOK_URL: ${{secrets.TOKEN}}
+              DESTINATION_BRANCH: main
